@@ -55,9 +55,10 @@ module.exports = (options) => ({
       },
       {
         test: /\.(jpg|png|gif)$/,
-        use: [
-          'file-loader',
-          {
+        exclude: [/node_modules/, require.resolve('./index.html')],
+        use: {
+          loader: 'file-loader',
+         query: {
             loader: 'image-webpack-loader',
             options: {
               progressive: true,
@@ -69,7 +70,7 @@ module.exports = (options) => ({
               },
             },
           },
-        ],
+        },
       },
       {
         test: /\.html$/,
