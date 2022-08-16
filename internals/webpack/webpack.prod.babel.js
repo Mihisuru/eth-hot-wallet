@@ -47,7 +47,7 @@ module.exports = require('./webpack.base.babel')({
     new WebpackMonitor({
       capture: true, // -> default 'true'
       target: '../monitor/myStatsStore.json', // default -> '../monitor/stats.json'
-      launch: false, // -> default 'false'
+      launch: true, // -> default 'false'
       port: 8081, // default -> 8081
     }),
 
